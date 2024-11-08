@@ -1,15 +1,15 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { ContentService } from 'src/service/content/content.service';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  selector: 'app-parent-component',
+  templateUrl: './parent-component.component.html',
+  styleUrls: ['./parent-component.component.css'],
   changeDetection: ChangeDetectionStrategy.Default,
   providers: [ContentService]
 })
-export class AppComponent {
-  title = 'angular-demo';
+export class ParentComponentComponent {
+
   counter = 0;
   dataObject = { name: 'Initial' };
 
@@ -29,4 +29,5 @@ export class AppComponent {
   updateServiceMessage() {
     this.contentService.message = `Updated by parent component at ${new Date().toLocaleTimeString()}`;
   }
+
 }
